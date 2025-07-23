@@ -56,6 +56,9 @@ total_sales
 ----------------
 55896.01
 
+DEMO VIDEO RECORDING:
+https://drive.google.com/file/d/1Qdj1Ue_VNEQXJO6fGhbcPAw7LrPc8ep2/view?usp=sharing
+
 
 AUTHOR
 KAVYA KILARI
