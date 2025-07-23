@@ -1,24 +1,63 @@
-# AI-Agent-to-Answer-E-commerce-Data-Questions
-# AI Agent for E-Commerce Data Queries
+#  E-Commerce AI Agent: Natural Language to SQL
 
-This project is an AI-powered assistant that answers natural language questions related to e-commerce product performance, using structured CSV datasets and SQLite.
+This project builds an **AI Agent** that answers natural language questions about e-commerce sales and ad performance using structured data stored in CSVs and SQLite. The system translates natural language into SQL queries using simple rule-based logic and fetches the answer from a local database.
 
-##  Features
-- Converts user questions to SQL (rule-based)
-- Answers from a SQLite database
-- Supports:
-  - Total Sales
-  - Return on Ad Spend (RoAS)
-  - Highest CPC product
+> No internet or LLM needed — works 100% offline and is beginner-friendly.
 
-##  Files
-- `load_data.py` — loads CSVs into `ecommerce.db`
-- `query_agent.py` — main program to ask questions
-- `llm_utils.py` — maps user questions to SQL queries
-- `total_sales.csv`, `ad_metrics.csv`, `eligibility.csv` — source datasets
+---
 
-## How to Run
-1. Clone the repo
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+## Features
+
+- Ask questions in plain English like:
+  - *"What is my total sales?"*
+  - *"Calculate the RoAS"*
+  - *"Which product had the highest CPC?"*
+- Translates questions into SQL using rule-based matching
+- Runs queries against an SQLite database built from CSV files
+- Displays clean, readable answers
+- Modular and easy to extend
+
+---
+
+## Folder Structure
+ecommerce-ai-agent/
+├── total_sales.csv # Product sales data
+├── ad_metrics.csv # Ad metrics data
+├── eligibility.csv # Eligibility flags
+├── load_data.py # Loads CSV data into SQLite
+├── llm_utils.py # Rule-based logic for SQL generation
+├── query_agent.py # Main interface for asking questions
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .gitignore # Ignore venv, pycache, etc
+##  How to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/ecommerce-ai-agent.git
+cd ecommerce-ai-agent
+2. Install Python dependencies
+pip install -r requirements.txt
+3. Load data into SQLite
+python load_data.py
+This will create a file called ecommerce.db containing all 3 tables.
+4. Start the agent and ask questions
+python query_agent.py
+Then type your question like:
+What is my total sales?
+SAMPLE OUTPUT:
+Ask a question about your e-commerce data: What is my total sales?
+
+Generated SQL:
+SELECT SUM(total_sales) as total_sales FROM total_sales;
+
+Answer:
+total_sales
+----------------
+55896.01
+
+
+AUTHOR
+KAVYA KILARI
+INTEGRATED MTECH SOFTWARE ENGINEERING-21MIS0497
+
